@@ -7,10 +7,40 @@
 </head>
 <body>
 <ul>
-	<li><a href="GuessNumTagLib.jsp"></a>Guess Number (Bean)</li>
-	<li><a href="brad2101/Brad20">Caculator MVC</a></li>
-	<li><a href="MailService.jsp">Mail Service</a></li>
+	<li id='test1'></li>
+	<li id='test2'></li>
+	<li id='test3'></li>
+	<li id='test4'></li>
+	<li id='test5'></li>
 </ul>
+<script>
+// tests => lots of test
+var tests = [];
+
+// define test object
+function test(i){
+	var counter = 0;
+	var myBody = document.getElementById("test"+(i + 1));
+	myBody.innerHTML = 0;
+
+	//
+	this.timer = function(){
+		setInterval(function(){
+			myBody.innerHTML = counter;
+			counter++;	
+		}, 500);
+	}
+} 
+for (var i = 0; i < 5; i++) {
+	tests[i] = new test(i); 
+}
+
+for(var i = 0; i < 5; i++){
+	setTimeout(tests[i].timer,1000*(i + 1));	
+}
+
+
 	
+</script>	
 </body>
 </html>
